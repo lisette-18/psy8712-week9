@@ -26,3 +26,7 @@ for(i in 1:length(sections)) { #using forloop to loop over the four desired sect
 ggplot(cnbc_tbl, aes(x = source, y = length)) +
   geom_boxplot() + #creating a visualization and using boxplot because i assume we want to see the distribution
   labs(x = "Source of Headline", y = "Number of words in headline", title = "Boxplot of soruce and length of headlines")
+
+#Analysis
+sum_aov <- summary(aov(length ~ source, data = cnbc_tbl)) #conduct anova comparing length across all four soruces, code provided in instructions
+#i see a significant difference between the four sources with p value pf .02
