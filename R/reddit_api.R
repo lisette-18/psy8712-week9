@@ -21,3 +21,12 @@ ggplot(rstats_tbl, aes(x = upvotes, y = comments)) +
 corr <- cor.test(rstats_tbl$upvotes, rstats_tbl$comments)
 corr$estimate
 corr$p.value
+
+#Publication
+# The correlation between upvotes and comments was r(121) = .52, p = .00. This test was statistically significant.
+
+cat(sprintf("The correlation between upvotes and comments was r(%d) = %s, p = %s. This test %s statistically significant.",
+                   corr$parameter, 
+                   sub("^0", "",formatC(corr$estimate, format = 'f', digits = 2)), 
+                   sub("^0", "", formatC(corr$p.value, format = 'f', digits = 2)),
+                   ifelse(corr$p.value < 0.05, "was", "was not")))
