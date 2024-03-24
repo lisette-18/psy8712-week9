@@ -2,8 +2,7 @@
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 library(tidyverse)
 library(rvest)
-library(httr)
-library(jsonlite)
+
 
 #Data Import and Cleaning
 sections <-  c("Buiness", "Investing", "Tech", "Politics") #import sections that we will be using
