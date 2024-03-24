@@ -16,3 +16,8 @@ ggplot(rstats_tbl, aes(x = upvotes, y = comments)) +
   geom_point() +
   geom_smooth(method = "lm", color = "pink") +
   labs(x = "Upvotes", y = "Comments", title = "Scatterplot of the Upvotes and Comments")
+
+#Analysis
+corr <- cor.test(rstats_tbl$upvotes, rstats_tbl$comments)
+corr$estimate
+corr$p.value
