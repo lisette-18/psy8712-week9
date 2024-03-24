@@ -21,5 +21,9 @@ for(i in 1:length(sections)) { #using forloop to loop over the four desired sect
                   length = length,
                   source = source)
   cnbc_tbl <- rbind(cnbc_tbl, tbl_2) #this recombines them after the foodloop looped ver all four sections
-  
 }
+
+#Visualization
+ggplot(cnbc_tbl, aes(x = source, y = length)) +
+  geom_boxplot() + #creating a visualization and using boxplot because i assume we want to see the distribution
+  labs(x = "Source of Headline", y = "Number of words in headline", title = "Boxplot of soruce and length of headlines")
